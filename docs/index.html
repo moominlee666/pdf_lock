@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f5" />
+    <meta name="description" content="在瀏覽器本機為 PDF 加上浮水印及開啟密碼。" />
+    <title>PDF Lock — 安心分享每一份文件</title>
+    <script type="module" crossorigin src="./assets/index-CrMuZ9YL.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bmjc8U-M.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="PDF Lock 首頁">
+          <span class="brand-icon" aria-hidden="true">✳</span>
+          <span>PDF<span class="brand-light">LOCK</span></span>
+        </a>
+        <div class="top-note"><span class="status-dot"></span> 在你的瀏覽器中安全處理</div>
+      </header>
+
+      <main>
+        <section class="intro">
+          <div class="eyebrow"><span class="eyebrow-line"></span> DOCUMENT PROTECTION</div>
+          <h1>你的文件，<br /><span>你的保護。</span></h1>
+          <p>為 PDF 選擇加入浮水印或開啟密碼。<br class="desktop-break" />簡單幾步，讓每次分享都更安心。</p>
+        </section>
+
+        <section class="workspace" aria-label="保護 PDF">
+          <div class="workspace-heading">
+            <div>
+              <span class="section-kicker">GET STARTED</span>
+              <h2>保護你的 PDF</h2>
+              <p>可一次選擇多個檔案，並套用相同的保護設定。</p>
+            </div>
+            <span class="document-icon" aria-hidden="true">↗</span>
+          </div>
+
+          <form id="protect-form">
+            <div class="field-heading"><span class="step-number">01</span><label for="pdf-file">選擇 PDF 檔案（可多選）</label></div>
+            <label class="upload-zone" id="upload-zone" for="pdf-file">
+              <span class="upload-icon" aria-hidden="true">↑</span>
+              <span class="upload-title" id="file-name">點擊選擇或拖曳多個 PDF 至此</span>
+              <span class="upload-hint">支援 .pdf 檔案，檔案只在你的裝置上處理</span>
+            </label>
+            <input id="pdf-file" type="file" accept=".pdf,application/pdf" multiple required />
+
+            <div class="divider"></div>
+            <div class="field-heading"><span class="step-number">02</span><label for="watermark">設定浮水印（選填）</label></div>
+            <div class="input-wrap">
+              <input id="watermark" type="text" placeholder="例如：僅供內部使用" maxlength="100" />
+            </div>
+            <p class="field-hint">留空則不加入浮水印；輸入的文字會加到每一頁。</p>
+            <fieldset id="watermark-options" class="watermark-options">
+              <legend>浮水印樣式</legend>
+              <div class="layout-options">
+                <label class="layout-option">
+                  <input type="radio" name="watermark-layout" value="center" aria-label="中央一個大浮水印" checked />
+                  <span class="layout-preview">
+                    <svg viewBox="0 0 96 110" aria-hidden="true">
+                      <rect x="10" y="5" width="76" height="100" rx="4" fill="#fff" stroke="#dce6de" />
+                      <path d="M20 24h48M20 32h55M20 40h45M20 68h52M20 76h45M20 84h55" stroke="#e9efea" stroke-width="2" stroke-linecap="round" />
+                      <text x="48" y="59" text-anchor="middle" transform="rotate(-35 48 55)" fill="#80a88b" font-size="12" font-weight="700">浮水印</text>
+                    </svg>
+                  </span>
+                </label>
+                <label class="layout-option">
+                  <input type="radio" name="watermark-layout" value="tiled" aria-label="多個小浮水印" />
+                  <span class="layout-preview">
+                    <svg viewBox="0 0 96 110" aria-hidden="true">
+                      <rect x="10" y="5" width="76" height="100" rx="4" fill="#fff" stroke="#dce6de" />
+                      <path d="M20 24h48M20 32h55M20 40h45M20 68h52M20 76h45M20 84h55" stroke="#e9efea" stroke-width="2" stroke-linecap="round" />
+                      <g fill="#80a88b" font-size="5.5" font-weight="700" text-anchor="middle">
+                        <text x="23" y="24" transform="rotate(-35 23 24)">浮水印</text>
+                        <text x="48" y="24" transform="rotate(-35 48 24)">浮水印</text>
+                        <text x="73" y="24" transform="rotate(-35 73 24)">浮水印</text>
+                        <text x="23" y="45" transform="rotate(-35 23 45)">浮水印</text>
+                        <text x="48" y="45" transform="rotate(-35 48 45)">浮水印</text>
+                        <text x="73" y="45" transform="rotate(-35 73 45)">浮水印</text>
+                        <text x="23" y="66" transform="rotate(-35 23 66)">浮水印</text>
+                        <text x="48" y="66" transform="rotate(-35 48 66)">浮水印</text>
+                        <text x="73" y="66" transform="rotate(-35 73 66)">浮水印</text>
+                        <text x="23" y="87" transform="rotate(-35 23 87)">浮水印</text>
+                        <text x="48" y="87" transform="rotate(-35 48 87)">浮水印</text>
+                        <text x="73" y="87" transform="rotate(-35 73 87)">浮水印</text>
+                      </g>
+                    </svg>
+                  </span>
+                </label>
+              </div>
+              <div class="opacity-heading">
+                <label for="watermark-opacity">浮水印深淺</label>
+                <output id="opacity-value" for="watermark-opacity">28%</output>
+              </div>
+              <input id="watermark-opacity" type="range" min="5" max="100" value="28" />
+              <div class="opacity-labels"><span>較淺</span><span>較深</span></div>
+            </fieldset>
+
+            <div class="divider"></div>
+            <div class="field-heading"><span class="step-number">03</span><label for="password">設定開啟密碼（選填）</label></div>
+            <div class="input-wrap password-wrap">
+              <input id="password" type="password" placeholder="輸入 PDF 開啟密碼" autocomplete="new-password" />
+              <button class="show-password" type="button" id="toggle-password" aria-label="顯示密碼" aria-pressed="false">顯示</button>
+            </div>
+            <p class="field-hint">留空則不加密；設定密碼後需要此密碼才能開啟。</p>
+
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+            <button class="submit-button" type="submit" id="submit-button"><span>處理並下載 PDF</span><span aria-hidden="true">↗</span></button>
+            <p class="privacy-note"><span aria-hidden="true">◈</span> 本機處理，不上傳檔案或密碼</p>
+          </form>
+        </section>
+
+        <section class="trust-row" aria-label="使用說明">
+          <div><span class="trust-icon">◌</span><div><strong>檔案留在本機</strong><p>所有處理皆在瀏覽器完成</p></div></div>
+          <div><span class="trust-icon">✳</span><div><strong>每頁浮水印</strong><p>讓文件來源一目了然</p></div></div>
+          <div><span class="trust-icon">⌑</span><div><strong>密碼保護</strong><p>使用 AES-256 加密</p></div></div>
+        </section>
+      </main>
+      <footer><span>PDF LOCK <span class="footer-divider">/</span> 用心保護，安心分享。</span><span>PRIVATE BY DESIGN</span></footer>
+    </div>
+  </body>
+</html>
