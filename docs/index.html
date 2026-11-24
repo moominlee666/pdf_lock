@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f6f7f5" />
-    <meta name="description" content="在瀏覽器本機為 PDF 加上浮水印及開啟密碼。" />
+    <meta name="description" content="在瀏覽器本機為 PDF 加上浮水印、開啟密碼及列印限制。" />
     <title>PDF Lock — 安心分享每一份文件</title>
-    <script type="module" crossorigin src="./assets/index-D46l5GDx.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Bmjc8U-M.css">
+    <script type="module" crossorigin src="./assets/index-MlRiVqK0.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CRDVs64j.css">
   </head>
   <body>
     <div class="page">
@@ -23,7 +23,7 @@
         <section class="intro">
           <div class="eyebrow"><span class="eyebrow-line"></span> DOCUMENT PROTECTION</div>
           <h1>你的文件，<br /><span>你的保護。</span></h1>
-          <p>為 PDF 選擇加入浮水印或開啟密碼。<br class="desktop-break" />簡單幾步，讓每次分享都更安心。</p>
+          <p>為 PDF 選擇加入浮水印、開啟密碼或列印限制。<br class="desktop-break" />簡單幾步，讓每次分享都更安心。</p>
         </section>
 
         <section class="workspace" aria-label="保護 PDF">
@@ -116,7 +116,12 @@
               <input id="password" type="password" placeholder="輸入 PDF 開啟密碼" autocomplete="new-password" />
               <button class="show-password" type="button" id="toggle-password" aria-label="顯示密碼" aria-pressed="false">顯示</button>
             </div>
-            <p class="field-hint">留空則不加密；設定密碼後需要此密碼才能開啟。</p>
+            <p class="field-hint">設定密碼後需要此密碼才能開啟；限制列印時即使留空，也會套用權限加密。</p>
+            <label class="print-restriction">
+              <input id="restrict-printing" type="checkbox" />
+              <span>限制列印</span>
+            </label>
+            <p class="field-hint print-hint">列印限制會用隨機權限密碼保護（本工具無法解除）；此限制只在遵守 PDF 權限的閱讀器中生效，無法防止所有工具繞過。</p>
 
             <p id="message" class="message" role="status" aria-live="polite"></p>
             <button class="submit-button" type="submit" id="submit-button"><span>處理並下載 PDF</span><span aria-hidden="true">↗</span></button>
@@ -131,6 +136,6 @@
         </section>
       </main>
       <footer><span>PDF LOCK <span class="footer-divider">/</span> 用心保護，安心分享。</span><span>PRIVATE BY DESIGN</span></footer>
-    </div>
+    </div>
   </body>
 </html>
