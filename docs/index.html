@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f6f7f5" />
-    <meta name="description" content="在瀏覽器本機為 PDF 加上浮水印、開啟密碼及列印和複製限制。" />
+    <meta name="description" content="在瀏覽器本機為 PDF 加上浮水印、開啟密碼及列印、複製和修改限制。" />
     <title>PDF Lock — 安心分享每一份文件</title>
-    <script type="module" crossorigin src="./assets/index-Bh0w9O0C.js"></script>
+    <script type="module" crossorigin src="./assets/index-CdGOXDBZ.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CRDVs64j.css">
   </head>
   <body>
@@ -116,7 +116,7 @@
               <input id="password" type="password" placeholder="輸入 PDF 開啟密碼" autocomplete="new-password" />
               <button class="show-password" type="button" id="toggle-password" aria-label="顯示密碼" aria-pressed="false">顯示</button>
             </div>
-            <p class="field-hint">設定密碼後需要此密碼才能開啟；限制列印或禁止複製時即使留空，也會套用權限加密。</p>
+            <p class="field-hint">設定密碼後需要此密碼才能開啟；設定列印、複製或修改限制時，即使留空也會套用權限加密。</p>
             <label class="print-restriction">
               <input id="restrict-printing" type="checkbox" />
               <span>限制列印</span>
@@ -125,7 +125,11 @@
               <input id="restrict-copying" type="checkbox" />
               <span>禁止複製文字和圖片</span>
             </label>
-            <p class="field-hint print-hint">權限限制會用隨機權限密碼保護（本工具無法解除）；只在遵守 PDF 權限的閱讀器中生效，無法防止截圖或其他工具繞過。</p>
+            <label class="print-restriction">
+              <input id="restrict-modifying" type="checkbox" />
+              <span>限制編輯與修改</span>
+            </label>
+            <p class="field-hint print-hint">權限限制會用隨機權限密碼保護（本工具無法解除）；只在遵守 PDF 權限的閱讀器中生效。不能阻止另存新檔、複製檔案、截圖或使用其他工具繞過。</p>
 
             <p id="message" class="message" role="status" aria-live="polite"></p>
             <button class="submit-button" type="submit" id="submit-button"><span>處理並下載 PDF</span><span aria-hidden="true">↗</span></button>
